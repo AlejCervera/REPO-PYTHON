@@ -1,6 +1,6 @@
 #print('Hola Mundo')
 
-# Me cago en la mar salada
+# Me cachis en la mar salada
 
 #nombre = 'Juan'
 #print(f'Hola, {nombre}!')
