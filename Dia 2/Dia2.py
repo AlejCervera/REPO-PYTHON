@@ -35,3 +35,7 @@ numero = 7
 #        return "Debo ser ejecutada con un string"
 #
 #print(cuentaCaracteres('Mucho Elche'))
+
+letra = lambda palabra: palabra[-1]
+
+print(letra('Hola'))
