@@ -1,3 +1,6 @@
+from py_compile import main
+
+
 contraseña = 'mimamamemima'
 longitud_minima = 8
 longitud_maxima = 20
@@ -36,6 +39,19 @@ numero = 7
 #
 #print(cuentaCaracteres('Mucho Elche'))
 
-letra = lambda palabra: palabra[-1]
+#letra = lambda palabra: palabra[-1]
 
-print(letra('Hola'))
+#print(letra('Hola'))
+
+def obtener_nombre_completo(nombre, apellido):
+    return nombre + " " + apellido
+    def main():
+        usuarios = [
+         {"nombre": "Sofía"},
+         {"nombre": "Luis", "apellido": "Martínez"},
+         ]
+
+    for usuario in usuarios:
+        completo = obtener_nombre_completo(usuario["nombre"], usuario["apellido"])
+    print(completo)
+main()
