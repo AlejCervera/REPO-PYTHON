@@ -7,4 +7,5 @@ if len(contraseña) <= longitud_minima:
 elif len(contraseña) <= longitud_maxima:
     print('La longitud de la contraseña es válida, contraseña aceptada')
 else:
-    print(f'La longitud de la contraseña es muy larga, debe ser de al menos {longitud_maxima}')
+    print(f'La longitud de la contraseña es muy larga, debe ser de menos de {longitud_maxima}')
+
