@@ -20,3 +20,18 @@ numero = 7
 #    print(numero)
 #    numero += 1
 
+#def saludar(nombre):
+#
+#    return f'Hola {nombre}'
+#print(saludar('Sofia'))
+
+#def cuentaCaracteres(cadena):
+#    if isinstance(cadena, str):
+#        contador = 0
+#        for i in cadena:
+#            contador += 1
+#        return contador
+#    else:
+#        return "Debo ser ejecutada con un string"
+#
+#print(cuentaCaracteres('Mucho Elche'))
