@@ -16,6 +16,7 @@ longitud_maxima = 20
 
 numero = 7
 
-while numero < 12:
-    print(numero)
-    numero += 1
+#while numero < 12:
+#    print(numero)
+#    numero += 1
+
