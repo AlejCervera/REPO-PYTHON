@@ -9,7 +9,13 @@ longitud_maxima = 20
 #else:
 #    print(f'La longitud de la contraseña es muy larga, debe ser de menos de {longitud_maxima}')
 
-colores = ['rojo', 'verde', 'azul', 'amarillo']
+#colores = ['rojo', 'verde', 'azul', 'amarillo']
 
-for i in colores:
-    print(i)
+#for i in colores:
+#    print(i)
+
+numero = 7
+
+while numero < 12:
+    print(numero)
+    numero += 1
