@@ -28,5 +28,8 @@ while i <= 5:
             print('Se acabaron los intentos, programa finalizado')
         elif i == 5:
             print('Último intento, si fallas se acabó')
+        elif cosa == 'Hola Mundo':
+            print('Has introducido la frase secreta, eres un tolai, programa finalizado')
+            break
         else:
             print(f'Te quedan {5 - i} intentos')
