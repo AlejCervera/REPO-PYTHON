@@ -9,5 +9,24 @@
 #    else:
 #        print(f'Tienes {edad} años, eres menor de edad, no puedes beber alcohol ni ir a la cárcel, pringao')ç
 
-nombre = input('Introduce tu nombre: ')
-print('Hola mundo')
+i = 0
+correcto = False
+while i <= 5:
+    cosa = input('Introduce un número: ')
+    try:
+        int(cosa)
+        print(f'Has introducido {cosa}, es un entero')
+        correcto = True
+        break
+    except:
+        print(f'Has introducido {cosa}, no es un entero, vuelve a intentarlo')
+        i += 1
+    finally:
+        if correcto:
+            print('Programa finalizado correctamente')
+        elif i > 5:
+            print('Se acabaron los intentos, programa finalizado')
+        elif i == 5:
+            print('Último intento, si fallas se acabó')
+        else:
+            print(f'Te quedan {5 - i} intentos')
