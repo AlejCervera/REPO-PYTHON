@@ -1,1 +1,1 @@
-print('Vota pisoe')
+print('Miua')
