@@ -1,4 +1,5 @@
-import precios
+from precios import precio_final 
+from precios import precio_con_iva 
 
 def test_con_descuento():
     assert precio_final(100, 20) == 80
