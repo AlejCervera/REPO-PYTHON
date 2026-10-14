@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aromas Ilicitanos</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Montserrat:wght@500;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --verde: #05843e;
+      --verde-oscuro: #034d24;
+      --blanco: #ffffff;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    html, body { height: 100%; }
+
+    body {
+      font-family: 'Montserrat', sans-serif;
+      color: var(--blanco);
+      background: var(--verde-oscuro);
+      overflow-x: hidden;
+    }
+
+    .fondo {
+      position: fixed;
+      inset: 0;
+      z-index: -1;
+    }
+    .fondo svg { width: 100%; height: 100%; display: block; }
+    .fondo img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+    .fondo::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse at center, rgba(0,0,0,0.15) 0%, rgba(0,0,0,0.65) 100%);
+    }
+
+    main {
+      min-height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 16px;
+      gap: 1.2rem;
+    }
+
+    .escudo {
+      width: 90px;
+      height: 105px;
+      animation: aparecer 1s ease-out both;
+    }
+
+    h1 {
+      font-family: 'Playfair Display', serif;
+      font-weight: 900;
+      font-size: clamp(2.6rem, 9vw, 7rem);
+      line-height: 1;
+      letter-spacing: 0.02em;
+      text-shadow: 0 4px 24px rgba(0,0,0,0.7), 0 0 2px rgba(0,0,0,0.9);
+      animation: aparecer 1.2s ease-out 0.2s both;
+    }
+    h1 span { display: block; font-style: italic; color: #d9ffe6; }
+
+    .franja {
+      width: min(420px, 70vw);
+      height: 10px;
+      background: linear-gradient(90deg, var(--blanco) 0 33%, var(--verde) 33% 66%, var(--blanco) 66%);
+      border-radius: 5px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.5);
+      animation: aparecer 1.2s ease-out 0.4s both;
+    }
+
+    p {
+      font-weight: 700;
+      font-size: clamp(0.9rem, 2.4vw, 1.3rem);
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      text-shadow: 0 2px 10px rgba(0,0,0,0.8);
+      animation: aparecer 1.2s ease-out 0.6s both;
+    }
+
+    .letra {
+      max-width: 640px;
+      margin: 0 auto 4rem;
+      padding: 2rem 1.5rem;
+      background: rgba(3, 77, 36, 0.82);
+      border: 3px solid var(--blanco);
+      border-radius: 16px;
+      box-shadow: 0 10px 40px rgba(0,0,0,0.6);
+      text-align: center;
+    }
+    @media (max-width: 680px) { .letra { margin: 0 16px 3rem; } }
+    .letra h2 {
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+      font-size: clamp(1.6rem, 5vw, 2.4rem);
+      margin-bottom: 1.2rem;
+    }
+    .letra pre {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 500;
+      font-size: clamp(1rem, 2.6vw, 1.2rem);
+      line-height: 1.8;
+      white-space: pre-wrap;
+    }
+    .bajar {
+      margin-top: 1rem;
+      font-size: 2rem;
+      color: var(--blanco);
+      text-decoration: none;
+      animation: rebote 1.6s ease-in-out infinite;
+    }
+    @keyframes rebote {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(8px); }
+    }
+
+    @keyframes aparecer {
+      from { opacity: 0; transform: translateY(20px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="fondo">
+    <!-- Estadio Martínez Valero dibujado -->
+    <svg viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <linearGradient id="cielo" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0" stop-color="#0b1a2e"/>
+          <stop offset="1" stop-color="#1f3d5c"/>
+        </linearGradient>
+        <linearGradient id="grada" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0" stop-color="#e9efe9"/>
+          <stop offset="1" stop-color="#9aa89c"/>
+        </linearGradient>
+        <radialGradient id="luz" cx="0.5" cy="0.5" r="0.5">
+          <stop offset="0" stop-color="#fffbe0" stop-opacity="0.9"/>
+          <stop offset="1" stop-color="#fffbe0" stop-opacity="0"/>
+        </radialGradient>
+      </defs>
+
+      <!-- Cielo -->
+      <rect width="1600" height="900" fill="url(#cielo)"/>
+
+      <!-- Gradas (anillo del estadio) -->
+      <path d="M0 230 Q800 120 1600 230 L1600 520 L0 520 Z" fill="url(#grada)"/>
+      <!-- Franjas verdes de los asientos -->
+      <g fill="#05843e" opacity="0.85">
+        <path d="M0 270 Q800 165 1600 270 L1600 300 Q800 195 0 300 Z"/>
+        <path d="M0 350 Q800 250 1600 350 L1600 380 Q800 280 0 380 Z"/>
+        <path d="M0 430 Q800 335 1600 430 L1600 460 Q800 365 0 460 Z"/>
+      </g>
+      <!-- Cubierta -->
+      <path d="M0 215 Q800 100 1600 215 L1600 240 Q800 128 0 240 Z" fill="#cfd8d0"/>
+
+      <!-- Torres de focos -->
+      <g fill="#2b2b2b">
+        <rect x="140" y="70" width="10" height="180"/>
+        <rect x="1450" y="70" width="10" height="180"/>
+      </g>
+      <g fill="#fffbe0">
+        <rect x="100" y="55" width="90" height="28" rx="3"/>
+        <rect x="1410" y="55" width="90" height="28" rx="3"/>
+      </g>
+      <circle cx="145" cy="70" r="220" fill="url(#luz)"/>
+      <circle cx="1455" cy="70" r="220" fill="url(#luz)"/>
+
+      <!-- Césped en perspectiva -->
+      <polygon points="300,500 1300,500 1600,900 0,900" fill="#0b7a35"/>
+      <g fill="#0e8d3e">
+        <polygon points="400,500 500,500 400,900 200,900"/>
+        <polygon points="600,500 700,500 700,900 500,900" />
+        <polygon points="800,500 900,500 1000,900 800,900"/>
+        <polygon points="1000,500 1100,500 1300,900 1100,900"/>
+      </g>
+
+      <!-- Líneas del campo -->
+      <g fill="none" stroke="#ffffff" stroke-width="4" opacity="0.9">
+        <polygon points="340,520 1260,520 1520,880 80,880"/>
+        <line x1="800" y1="520" x2="800" y2="880"/>
+        <ellipse cx="800" cy="680" rx="150" ry="55"/>
+        <polygon points="340,520 230,520 0,880 80,880" />
+        <polygon points="430,600 270,600 130,800 340,800"/>
+        <polygon points="1170,600 1330,600 1470,800 1260,800"/>
+      </g>
+      <circle cx="800" cy="680" r="5" fill="#ffffff"/>
+    </svg>
+    <!-- Si añades una foto real llamada estadio.jpg, se pone encima del dibujo -->
+    <img src="estadio.jpg" alt="" onerror="this.remove()">
+  </div>
+
+  <main>
+    <!-- Escudo estilizado: blanco con franja verde -->
+    <svg class="escudo" viewBox="0 0 90 105" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <path d="M5 5 H85 V55 Q85 90 45 100 Q5 90 5 55 Z" fill="#ffffff" stroke="#034d24" stroke-width="4"/>
+      <rect x="5" y="38" width="80" height="20" fill="#05843e"/>
+      <text x="45" y="30" text-anchor="middle" font-family="Montserrat, sans-serif" font-weight="700" font-size="16" fill="#034d24">ECF</text>
+    </svg>
+
+    <h1>Aromas <span>Ilicitanos</span></h1>
+    <div class="franja"></div>
+    <p>Elche C.F. · Estadio Martínez Valero</p>
+    <a class="bajar" href="#letra" aria-label="Ver la letra">&#8595;</a>
+  </main>
+
+  <section class="letra" id="letra">
+    <h2>La letra</h2>
+    <!-- La letra se lee del archivo letra.txt (pégala ahí) -->
+    <pre id="texto-letra">Cargando...</pre>
+  </section>
+
+  <script>
+    fetch('letra.txt')
+      .then(r => { if (!r.ok) throw new Error(); return r.text(); })
+      .then(t => { document.getElementById('texto-letra').textContent = t.trim(); })
+      .catch(() => {
+        document.getElementById('texto-letra').textContent = 'No se ha encontrado letra.txt';
+      });
+  </script>
+
+</body>
+</html>
