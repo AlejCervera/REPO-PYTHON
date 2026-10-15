@@ -1,0 +1,7 @@
+services:
+  app:
+    image: python:3.11-slim
+    working_dir: /app/Docker_Dia_3/Prueba_Compose
+    command: ["python", "main.py"]
+    volumes:
+      - .:/app/Docker_Dia_3/Prueba_Compose
