@@ -1,7 +1,14 @@
 services:
-  app:
+   app1:
     image: python:3.11-slim
     working_dir: /app/Docker_Dia_3/Prueba_Compose
     command: ["python", "main.py"]
+    volumes:
+      - .:/app/Docker_Dia_3/Prueba_Compose
+   app2:
+    image: python:3.11-slim
+    working_dir: /app/Docker_Dia_3/Prueba_Compose
+    command: >
+      sh -c "pip install pytest && pytest"
     volumes:
       - .:/app/Docker_Dia_3/Prueba_Compose
